@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Glowup Salon</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-image: url('pics/Salon_right.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin: 0;
+        }
+
+        header {
+            background-color: #Ffd700;
+            padding: 10px 0;
+            display: flex;
+            justify-content: flex-end;
+            padding-bottom: 30px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            padding-right: 100px;
+            padding-top: 30px;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: black
+            ;
+            font-weight: normal;
+            font-size: 40px;
+            transition: filter 0.3s;
+        }
+
+        nav ul li a:hover {
+            font-weight: 550;
+            text-decoration: underline;
+            filter: brightness(120%);
+        }
+
+        .container {
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            height: calc(100vh - 50px);
+            padding-left: 50px;
+            margin-left: 300px;
+            padding-top: 30px;
+        }
+
+        .form-container {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            margin-left: 50px;
+            margin-right: 50px;
+            margin-bottom: 100px;
+            
+        }
+
+        h1 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin: 10px 0 5px 0;
+            font-weight: bold;
+            font-size: larger;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="tel"],
+        input[type="date"],
+        input[type="time"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+           font-size: large; 
+        }
+
+        .sidebar {
+            background-color: #f9f9f9;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 50%;
+            height: fit-content;
+            margin-bottom: 110px;
+        }
+
+        .service-title {
+            width: 100%;
+            text-align: center;
+        }
+
+        .services-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .service-column {
+            width: 30%;
+        }
+
+        .service-item {
+            margin-bottom: 10px;
+        }
+
+        .service-item label {
+            display: inline-flex;
+            align-items: center;
+        }
+
+        .service-item input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #000000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 25px;
+        }
+
+        button:hover {
+            background-color: #000000;
+            opacity: 0.7;
+        }
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Our Services</a></li>
+                <li><a href="#">About Us</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="form-container">
+            <h1>Register</h1>
+            <form>
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" placeholder="Sample Name" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="sample@gmail.com" required>
+
+                <label for="contact">Contact Number</label>
+                <input type="tel" id="contact" name="contact" placeholder="0123456789" required>
+
+                <label for="date">Date*</label>
+                <input type="date" id="date" name="date" required>
+
+                <label for="time">Time*</label>
+                <input type="time" id="time" name="time" required>
+
+                <label for="stylist">Stylist (Optional)</label>
+                <select id="stylist" name="stylist">
+                    <option value="" disabled selected>Select Stylist</option>
+                    <option value="Andy Lacompte">Andy Lacompte</option>
+                    <option value="Justin Marjan">Justin Marjan</option>
+                    <option value="Jenifer Yepez">Jenifer Yepez</option>
+                    <option value="Kris Ess">Kris Ess</option>
+                </select>
+
+                <button type="submit">Book now</button>
+            </form>
+        </div>
+
+        <div class="sidebar">
+            <h1 class="service-title">Services</h1>
+            <div class="services-container">
+                <div class="service-column">
+                    <h2>HAIR COLOR</h2>
+                    <div class="service-item">
+                        <label for="root-touch-up">
+                            <input type="checkbox" id="root-touch-up" name="root-touch-up">
+                            Root Touch-up ($60+)
+                        </label>
+                    </div>
+                    <div class="service-item">
+                        <label for="partial-highlight">
+                            <input type="checkbox" id="partial-highlight" name="partial-highlight">
+                            Partial Highlight ($120+)
+                        </label>
+                    </div>
+                    <div class="service-item">
+                        <label for="partial-with-color">
+                            <input type="checkbox" id="partial-with-color" name="partial-with-color">
+                            Partial w/ Color ($145+)
+                        </label>
+                    </div>
+                    <div class="service-item">
+                        <label for="full-highlight">
+                            <input type="checkbox" id="full-highlight" name="full-highlight">
+                            Full Highlight ($180+)
+                        </label>
+                    </div>
+                    <div class="service-item">
+                        <label for="full-with-color">
+                            <input type="checkbox" id="full-with-color" name="full-with-color">
+                            Full w/ Color ($235+)
+                        </label>
+                    </div>
+                    <div class="service-item">
+                        <label for="dimensional-color">
+                            <input type="checkbox" id="dimensional-color" name="dimensional-color">
+                            Dimensional (3) Color ($155+)
+                        </label>
+                    </div>
+                    <div class="service-item">
+                        <label for="color-correction">
+                            <input type="checkbox" id="color-correction" name="color-correction">
+                            Color Correction ($200/hr)
+                        </label>
+                    </div>
+                    <hr>
+
+                    <h2>STYLING</h2>
+                    <div class="service-item">
+                        <label for="thermal-iron">
+                            <input type="checkbox" id="thermal-iron" name="thermal-iron">
+                            Thermal Iron ($15+)
+                        </label>
+                    </div>
+                    <div class="service-item">
+                        <label for="shampoo-blowdry">
+                            <input type="checkbox" id="shampoo-blowdry" name="shampoo-blowdry">
+                            Shampoo/Blowdry ($30)
+                        </label>
+                    </div>
+                    <div class="service-item">
+                        <label for="updo">
+                            <input type="checkbox" id="updo" name="updo">
+                            Updo ($40+)
+                        </label>
+                    </div>
+                    <div class="service-item">
+                        <label for="braid">
+                            <input type="checkbox" id="braid" name="braid">
+                            Braid ($5+)
+                        </label>
+                    </div>
+                </div>
+                <hr>
+                <div class="service-column">
+                    <h2>TREATMENTS</h2>
+                    <div class="service-item">
+                        <label for="ph-bonder">
+                            <input type="checkbox" id="ph-bonder" name="ph-bonder">
+                            Ph Bonder ($20)
+                        </label>
+                    </div>
+                    <div class="service-item">
+                        <label for="deep-conditioning">
+                            <input type="checkbox" id="deep-conditioning" name="deep-conditioning">
+                            Deep Conditioning ($11)
+                        </label>
+                    </div>
+                    <div class="service-item">
+                        <label for="intensive-repair">
+                            <input type="checkbox" id="intensive-repair" name="intensive-repair">
+                            Intensive Repair ($40+)
+                        </label>
+                    </div>
+                    <hr>
+                    <h2>KERATIN</h2>
+                    <div class="service-item">
+                        <label for="lanza-keratin">
+                            <input type="checkbox" id="lanza-keratin" name="lanza-keratin">
+                            L’ANZA Keratin Healing Hair Oil ($50+)
+                        </label>
+                    </div>
+                    <div class="service-item">
+                        <label for="chi-keratin">
+                            <input type="checkbox" id="chi-keratin" name="chi-keratin">
+                            CHI Keratin ($150+)
+                        </label>
+                    </div>
+                    <div class="service-item">
+                        <label for="nexxus">
+                            <input type="checkbox" id="nexxus" name="nexxus">
+                            Nexxus ($400+)
+                        </label>
+                    </div>
+                </div>
+                <hr>
+                <div class="service-column">
+                    <h2>WAX SERVICES</h2>
+                    <div class="service-item">
+                        <label for="eyebrows">
+                            <input type="checkbox" id="eyebrows" name="eyebrows">
+                            Eyebrows ($8)
+                        </label>
+                    </div>
+                    <div class="service-item">
+                        <label for="body">
+                            <input type="checkbox" id="body" name="body">
+                            Body ($35+)
+                        </label>
+                    </div>
+                    <div class="service-item">
+                        <label for="body">
+                            <input type="checkbox" id="body" name="body">
+                           Soft wax 
+                        </label>
+                    </div>
+                    <hr>
+                    <h2>OTHER SERVICES</h2>
+                    <div class="service-item">
+                        <label for="manicure">
+                            <input type="checkbox" id="manicure" name="manicure">
+                            Manicure ($17)
+                        </label>
+                    </div>
+                    <div class="service-item">
+                        <label for="french-manicure">
+                            <input type="checkbox" id="french-manicure" name="french-manicure">
+                            French Manicure ($20)
+                        </label>
+                    </div>
+                    <div class="service-item">
+                        <label for="polish-change">
+                            <input type="checkbox" id="polish-change" name="polish-change">
+                            Polish Change ($13)
+                        </label>
+                    </div>
+                    <div class="service-item">
+                        <label for="pedicure">
+                            <input type="checkbox" id="pedicure" name="pedicure">
+                            Pedicure ($40)
+                        </label>
+                    </div>
+                    <div class="service-item">
+                        <label for="mini-pedicure">
+                            <input type="checkbox" id="mini-pedicure" name="mini-pedicure">
+                            Mini Pedicure ($20)
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
